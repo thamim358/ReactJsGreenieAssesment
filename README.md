@@ -2,7 +2,7 @@
 
 This project is a User Management Dashboard built using React.
 
-# Used Antd Component
+# Used Antd Component https://ant.design/
 
  for table,search and model
 
@@ -21,9 +21,9 @@ To get started with this project, follow these steps:
 
 3.**Start the development server:**   
    
- npm start
+   npm start
 
- This will start the development server on your local http://localhost:3000.
+   This will start the development server on your local http://localhost:3000.
 
 
 
