@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Table, Input, Modal } from "antd";
+import { Table, Input, Modal, Button } from "antd";
 
 const { Search } = Input;
 
@@ -54,6 +54,10 @@ const UserDetails = () => {
       user.username.toLowerCase().includes(search.toLowerCase()) ||
       user.id.toString().includes(search.toLowerCase())
   );
+  const generateReport = () => {
+    console.log("Generating report for user:", selectRow);
+    alert("Report Generated")
+  };
 
   const columns = [
     {
@@ -116,7 +120,11 @@ const UserDetails = () => {
           title="User Details"
           visible={openModal}
           onCancel={() => setopenModal(false)}
-          footer={null}
+          footer={[
+            <Button key="generateReport" onClick={generateReport} className="rounded-2xl bg-green-500 text-white font-bold">
+              Generate Report
+            </Button>,
+          ]}
         >
           {selectRow && (
             <div>

@@ -20,9 +20,9 @@ function AccountCreations() {
     <>
     <div className="">
     <div className="text-left font-bold text-green-500 text-4xl ">Welcome</div>
-    <div className="">
+    <div className="mx-44 mt-10">
       <div className="p-10 rounded-lg drop-shadow-lg bg-white mt-5">
-        <div className="text-left font-bold flex justify-center text-green-500 text-2xl pb-3 ">Create Account</div>
+        <div className="text-left font-bold  text-green-500 text-2xl pb-3 ">Create Account</div>
         <div className="mx-auto max-w-md">
             <fieldset>
           <form onSubmit={handleSubmit} className="mt-4">
