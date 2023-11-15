@@ -5,6 +5,8 @@ This project is a User Management Dashboard built using React.
 # Used Antd Component https://ant.design/
 
  for table,search and model
+ 
+**Used Tailwind.css**
 
 ## Installation
 
