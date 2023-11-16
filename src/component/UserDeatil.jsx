@@ -50,13 +50,14 @@ const UserDetails = () => {
     setUsers(data);
   }, []);
 
-  const searchUser = users.filter((user) =>
+  const searchUser = users.filter(
+    (user) =>
       user.username.toLowerCase().includes(search.toLowerCase()) ||
       user.id.toString().includes(search.toLowerCase())
   );
   const generateReport = () => {
     console.log("Generating report for user:", selectRow);
-    alert("Report Generated")
+    alert("Report Generated");
   };
 
   const columns = [
@@ -65,7 +66,7 @@ const UserDetails = () => {
       dataIndex: "id",
       key: "id",
     },
-   
+
     {
       title: "Username",
       dataIndex: "username",
@@ -95,67 +96,74 @@ const UserDetails = () => {
 
   return (
     <>
-    <div className="flex justify-between">
-    <div className="text-left font-bold text-green-500 text-4xl ">User Dashboard</div>
-    <Search
+      <div className="flex justify-between">
+        <div className="text-left font-bold text-green-500 text-4xl ">
+          User Dashboard
+        </div>
+        <Search
           size="large"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search Users"
-          className="flex justify-end mb-4 w-56"
+          className="flex justify-end mb-4 w-56 shadow-xl bg-green-500 border ring-2 ring-green-500 rounded-lg  "
         />
-    </div>
-    
-     <div className="overflow-y-auto max-h-full">
-      <div className="p-10 rounded-lg drop-shadow-lg bg-white text-bold mt-5">
-        <div className="text-left font-bold text-green-500 text-2xl pb-3">User Details</div>
-       
-        <div className="overflow-x-auto shadow-xl cursor">
-          <Table
-          className="rounded-2xl bg-gray-100 cursor rounded-2xl "
-            dataSource={searchUser}
-            columns={columns}
-            rowKey={(record) => record.id}
-            onRow={(record) => ({
-              onClick: () => handleModal(record),
-            })}
-          />
-        </div>
-        <Modal
-          title="User Details"
-          visible={openModal}
-          onCancel={() => setopenModal(false)}
-          footer={[
-            <button key="generateReport" onClick={generateReport} className="rounded-2xl bg-green-500 p-2 text-white font-bold hover:bg-green-400">
-              Generate Report
-            </button>,
-          ]}
-        >
-          {selectRow && (
-            <div>
-              <p className="mt-2">
-                <strong>ID:</strong> {selectRow.id}
-              </p>
-              <p className="mt-2">
-                <strong>Username:</strong> {selectRow.username}
-              </p>
-              <p className="mt-2">
-                <strong>Email:</strong> {selectRow.email}
-              </p>
-              <p className="mt-2">
-                <strong>Phone:</strong> {selectRow.phone}
-              </p>
-
-              <p className="mt-2">
-                <strong>Creation Date:</strong> {selectRow.creationDate}
-              </p>
-            </div>
-          )}
-        </Modal>
       </div>
-    </div>
+
+      <div className="overflow-y-auto max-h-full">
+        <div className="p-10 rounded-lg drop-shadow-lg bg-white text-bold mt-5">
+          <div className="text-left font-bold text-green-500 text-2xl pb-3">
+            User Details
+          </div>
+
+          <div className="overflow-x-auto shadow-xl cursor">
+            <Table
+              className="rounded-2xl bg-gray-100 cursor rounded-2xl "
+              dataSource={searchUser}
+              columns={columns}
+              rowKey={(record) => record.id}
+              onRow={(record) => ({
+                onClick: () => handleModal(record),
+              })}
+            />
+          </div>
+          <Modal
+            title="User Details"
+            visible={openModal}
+            onCancel={() => setopenModal(false)}
+            footer={[
+              <button
+                key="generateReport"
+                onClick={generateReport}
+                className="rounded-2xl bg-green-500 p-2 text-white font-bold hover:bg-green-400"
+              >
+                Generate Report
+              </button>,
+            ]}
+          >
+            {selectRow && (
+              <div>
+                <p className="mt-2">
+                  <strong>ID:</strong> {selectRow.id}
+                </p>
+                <p className="mt-2">
+                  <strong>Username:</strong> {selectRow.username}
+                </p>
+                <p className="mt-2">
+                  <strong>Email:</strong> {selectRow.email}
+                </p>
+                <p className="mt-2">
+                  <strong>Phone:</strong> {selectRow.phone}
+                </p>
+
+                <p className="mt-2">
+                  <strong>Creation Date:</strong> {selectRow.creationDate}
+                </p>
+              </div>
+            )}
+          </Modal>
+        </div>
+      </div>
     </>
-   
   );
 };
 

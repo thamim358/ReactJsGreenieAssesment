@@ -48,6 +48,7 @@ function AccountCreations() {
                       onChange={(e) => setUsername(e.target.value)}
                       placeholder="Enter username"
                       className="w-full p-2 rounded border border-gray-300"
+                      required
                     />
                   </div>
                   <div className="mb-4">
@@ -64,6 +65,7 @@ function AccountCreations() {
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Enter password"
                       className="w-full p-2 rounded border border-gray-300"
+                      required
                     />
                   </div>
                   <button
