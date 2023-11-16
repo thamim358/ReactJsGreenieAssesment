@@ -8,27 +8,22 @@ function AccountCreations() {
     e.preventDefault();
     alert("account created successfully");
     clearform();
-    passLenAlert();
   };
 
   const clearform = () => {
     setPassword("");
     setUsername("");
   };
-  const passLenAlert = () => {
-    if (password.length == null) {
-      alert("Maximum letters should be 5");
-    }
-  };
+
   return (
     <>
       <div className="">
-        <div className="text-left font-bold text-green-500 text-4xl ">
+        <div className="text-left font-bold text-green-600 text-4xl ">
           Welcome
         </div>
         <div className="flex justify-center mt-10">
           <div className="p-10 rounded-lg drop-shadow-lg bg-white mt-5 max-w-sm w-full">
-            <div className="text-left font-bold text-green-500 text-2xl pb-3">
+            <div className="text-left font-bold text-green-600 text-2xl pb-3">
               Create Account
             </div>
             <div className="mx-auto">
@@ -69,9 +64,9 @@ function AccountCreations() {
                     />
                   </div>
                   <button
-                    disabled={!(password.length > 5)}
+                    disabled={!(password.length >= 6)}
                     type="submit"
-                    className="w-full bg-green-500 text-white p-2 rounded hover:bg-green-400"
+                    className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-500"
                   >
                     Create Account
                   </button>

@@ -97,7 +97,7 @@ const UserDetails = () => {
   return (
     <>
       <div className="flex justify-between">
-        <div className="text-left font-bold text-green-500 text-4xl ">
+        <div className="text-left font-bold text-green-600 text-4xl ">
           User Dashboard
         </div>
         <Search
@@ -105,13 +105,13 @@ const UserDetails = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search Users"
-          className="flex justify-end mb-4 w-56 shadow-xl bg-green-500 border ring-2 ring-green-500 rounded-lg  "
+          className="flex justify-end mb-4 w-56 shadow-xl bg-green-600 border ring-2 ring-green-600 rounded-lg  "
         />
       </div>
 
       <div className="overflow-y-auto max-h-full">
-        <div className="p-10 rounded-lg drop-shadow-lg bg-white text-bold mt-5">
-          <div className="text-left font-bold text-green-500 text-2xl pb-3">
+        <div className="p-10 rounded-lg shadow-2xl bg-white text-bold mt-5">
+          <div className="text-left font-bold text-green-600 text-2xl pb-3">
             User Details
           </div>
 
@@ -134,7 +134,7 @@ const UserDetails = () => {
               <button
                 key="generateReport"
                 onClick={generateReport}
-                className="rounded-2xl bg-green-500 p-2 text-white font-bold hover:bg-green-400"
+                className="rounded-2xl bg-green-600 p-2 text-white font-bold hover:bg-green-500"
               >
                 Generate Report
               </button>,
