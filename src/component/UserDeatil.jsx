@@ -95,16 +95,21 @@ const UserDetails = () => {
 
   return (
     <>
-    <div className="text-left font-bold text-green-500 text-4xl ">Dashboard</div>
-     <div className="overflow-y-auto max-h-full">
-      <div className="p-10 rounded-lg drop-shadow-lg bg-white text-bold mt-5">
-        <div className="text-left font-bold text-green-500 text-2xl pb-3">User Details</div>
-        <Search
+    <div className="flex justify-between">
+    <div className="text-left font-bold text-green-500 text-4xl ">User Dashboard</div>
+    <Search
+          size="large"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search Users"
-          className="flex justify-start  mb-4"
+          className="flex justify-end mb-4 w-56"
         />
+    </div>
+    
+     <div className="overflow-y-auto max-h-full">
+      <div className="p-10 rounded-lg drop-shadow-lg bg-white text-bold mt-5">
+        <div className="text-left font-bold text-green-500 text-2xl pb-3">User Details</div>
+       
         <div className="overflow-x-auto shadow-xl cursor">
           <Table
           className="rounded-2xl bg-gray-100 cursor rounded-2xl "
@@ -121,9 +126,9 @@ const UserDetails = () => {
           visible={openModal}
           onCancel={() => setopenModal(false)}
           footer={[
-            <Button key="generateReport" onClick={generateReport} className="rounded-2xl bg-green-500 text-white font-bold">
+            <button key="generateReport" onClick={generateReport} className="rounded-2xl bg-green-500 p-2 text-white font-bold hover:bg-green-400">
               Generate Report
-            </Button>,
+            </button>,
           ]}
         >
           {selectRow && (
